@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col s12 m6 offset-m3 l6 offset-l3">
+    <div class="card">
+      <form class="card-content" [formGroup]="update" (ngSubmit)="updateProduct(update.value)">
+        <h5>Update This Product</h5>
+        <label>Title</label><input type="text" formControlName="title" [ngModel]="product.title">
+        <label>Price</label><input type="text" formControlName="price" [ngModel]="this.product.price">
+        <label>Image URL</label><input type="text" formControlName="url" [ngModel]="this.product.url">
+        <input type="hidden" formControlName="_id" [ngModel]="id">
+        <input class="btn" type="submit" name="submit" value="Update" [disabled]="!update.valid">
+        <a class="btn" [routerLink]="['/products']">Cancel</a>
+    </form>
+    </div>
+  </div>
+</div>

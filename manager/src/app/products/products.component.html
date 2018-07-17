@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col s12 m6 offset-m3 l6 offset-l3 scrolling-wrapper">
+    <div class="card" *ngFor="let i of products">
+      <div class="card-content">
+        <label>{{ i.title }}</label><br>
+        <img src="{{ i.url }}" alt="doomsday device"><br>
+        <label>Price: ${{ i.price }}</label>
+      </div>
+      <div class="card-action">
+        <a [routerLink]="['edit/', i._id]">Edit</a>
+        <a (click)="destroy(i._id)">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
